@@ -35,9 +35,11 @@ public class Review05 {
      // 5, 6. Execute Select statement and store/assign result
         System.out.print("検索キーワードを入力してください > ");
         String input = keyIn();
+        int num1 = Integer.parseInt(input);
 
         // Prepared Statement
-        pstmt.setString(1, input);
+        pstmt.setInt(1, num1);
+       
 
         rs = pstmt.executeQuery();
 
@@ -81,15 +83,15 @@ public class Review05 {
             }
         }
     }
-private static String keyIn() {
-    String line = null;
-    try {
-        BufferedReader key = new BufferedReader(new InputStreamReader(System.in));
-        line = key.readLine();
-    } catch (IOException e) {
+    private static String keyIn() {
+        String line = null;
+        try {
+            BufferedReader key = new BufferedReader(new InputStreamReader(System.in));
+            line = key.readLine();
+        } catch (IOException e) {
+
+        }
+        return line;
+    }
 
     }
-    return line;
-}
-
-}
